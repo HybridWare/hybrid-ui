@@ -12,7 +12,7 @@
   let extra = ''
   async function func(e){
     e.preventDefault()
-    const ft = await fetch('http://localhost:13579/', {method: 'POST', headers: {'Content-Type': 'application.json'}, body: JSON.stringify({extra, proto, id, verb, path: routePath, data: fsPath, address: hashOrKey === 'key' ? true : false})})
+    const ft = await fetch('http://localhost:13579/', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({extra, proto, id, verb, path: routePath, data: fsPath, address: hashOrKey === 'key' ? true : false})})
     if(ft.headers.has('X-ID')){
       mainHeader = ft.headers.get('X-ID')
     }
